@@ -6,8 +6,7 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { ChevronDown, ChevronUp, HelpCircle, MessageCircle, Shield, Zap, Award, CreditCard, Clock, Users } from 'lucide-react';
-import Link from 'next/link';
+import { ChevronDown, ChevronUp, HelpCircle, MessageCircle, Clock, Users } from 'lucide-react';
 
 interface FAQItem {
    question: string;
