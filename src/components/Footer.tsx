@@ -1,14 +1,16 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 import { HelpCircle, MessageCircle, FileText, Mail, Phone } from 'lucide-react';
 import { Logo } from './Logo';
 import Link from 'next/link';
 
 export function Footer() {
    return (
-      <footer className="bg-background border-t mt-16">
+      <footer className="bg-background mt-16">
+         {/* Subtle top border */}
+         <div className="h-px bg-gradient-to-r from-transparent via-border/30 to-transparent"></div>
+
          <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                {/* Brand Section */}
@@ -87,7 +89,8 @@ export function Footer() {
                </div>
             </div>
 
-            <Separator className="my-8" />
+            {/* Thinner separator */}
+            <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent my-8"></div>
 
             {/* Bottom Section */}
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">

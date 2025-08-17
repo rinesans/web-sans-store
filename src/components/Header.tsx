@@ -20,7 +20,7 @@ export function Header() {
 
    return (
       <>
-         <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+         <header className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b-gray-300">
             <div className="container mx-auto px-4 py-4">
                <div className="flex items-center justify-between">
                   <Link href="/" onClick={closeMenu}>
@@ -69,7 +69,7 @@ export function Header() {
 
                {/* Mobile Navigation */}
                {isMenuOpen && (
-                  <div className="md:hidden mt-4 pb-4 border-t pt-4">
+                  <div className="md:hidden mt-4 pb-4 border-t border-border/50 pt-4">
                      <div className="flex flex-col space-y-2">
                         <Link href="/search-transaction" onClick={closeMenu}>
                            <Button variant="ghost" className="w-full justify-start text-muted-foreground hover:text-primary dark:hover:text-primary">
@@ -93,6 +93,8 @@ export function Header() {
                   </div>
                )}
             </div>
+            {/* Subtle bottom border */}
+            <div className="h-px bg-gradient-to-r from-transparent via-border/30 to-transparent"></div>
          </header>
       </>
    );
