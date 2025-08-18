@@ -61,7 +61,7 @@ export function Header() {
                   {/* Mobile Menu Button */}
                   <div className="md:hidden flex items-center space-x-2">
                      <ThemeToggle />
-                     <Button variant="ghost" size="sm" onClick={toggleMenu} className="p-2">
+                     <Button variant="ghost" size="sm" onClick={toggleMenu} className="p-2" aria-label={isMenuOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'} aria-expanded={isMenuOpen} aria-controls="mobile-menu">
                         {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                      </Button>
                   </div>
@@ -69,7 +69,7 @@ export function Header() {
 
                {/* Mobile Navigation */}
                {isMenuOpen && (
-                  <div className="md:hidden mt-4 pb-4 border-t border-border/50 pt-4">
+                  <div id="mobile-menu" className="md:hidden mt-4 pb-4 border-t border-border/50 pt-4">
                      <div className="flex flex-col space-y-2">
                         <Link href="/search-transaction" onClick={closeMenu}>
                            <Button variant="ghost" className="w-full justify-start text-muted-foreground hover:text-primary dark:hover:text-primary">

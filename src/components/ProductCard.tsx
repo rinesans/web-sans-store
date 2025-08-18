@@ -47,7 +47,7 @@ export function ProductCard({ product, onBuyNow }: ProductCardProps) {
          </div>
 
          <CardHeader className="pb-3">
-            <div className="flex items-start justify-between">
+            <div className="flex justify-between items-start">
                <div className="space-y-1">
                   <CardTitle className="text-lg font-semibold line-clamp-2 text-purple-800 dark:text-purple-200">{product.name}</CardTitle>
                   <CardDescription className="text-sm text-purple-600 dark:text-purple-400">{product.type}</CardDescription>
@@ -70,12 +70,17 @@ export function ProductCard({ product, onBuyNow }: ProductCardProps) {
          <CardFooter className="pt-0">
             <div className="flex gap-2 w-full">
                <ProductModal product={product}>
-                  <Button variant="outline" className="flex-1 border-purple-300 dark:border-purple-700 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50">
+                  <Button variant="outline" className="flex-1 border-purple-300 dark:border-purple-700 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50" aria-label={`Lihat detail ${product.name}`}>
                      <Eye className="mr-2 h-4 w-4" />
                      Detail
                   </Button>
                </ProductModal>
-               <Button className="flex-1 bg-purple-500 hover:bg-purple-600 text-white" onClick={() => onBuyNow(product)} disabled={isOutOfStock}>
+               <Button
+                  className="flex-1 bg-purple-500 hover:bg-purple-600 text-white"
+                  onClick={() => onBuyNow(product)}
+                  disabled={isOutOfStock}
+                  aria-label={isOutOfStock ? `${product.name} sudah habis` : `Beli ${product.name} seharga ${formatPrice(product.price)}`}
+               >
                   <ShoppingCart className="mr-2 h-4 w-4" />
                   {isOutOfStock ? 'Habis' : 'Beli'}
                </Button>
