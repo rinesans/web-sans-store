@@ -13,6 +13,10 @@ TOKOPAY_SECRET_KEY=your_secret_key_here
 # API Configuration
 # JWT Token untuk akses API server
 JWT_TOKEN=your_jwt_token_here
+
+# Maintenance Mode
+# Set to 'true' to enable global maintenance page
+MAINTENANCE_MODE=false
 ```
 
 ### Contoh Format:
@@ -21,6 +25,7 @@ JWT_TOKEN=your_jwt_token_here
 TOKOPAY_MERCHANT_ID=M20230422TEST26949756
 TOKOPAY_SECRET_KEY=2f0683f4a9fed9958f218f1490204764c68a79xxxxxxx5a88539559dea74ce
 JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+MAINTENANCE_MODE=true
 ```
 
 ### Cara Mendapatkan Credentials:
@@ -39,6 +44,8 @@ npm run dev
 ```
 
 Cek di console apakah ada error "Missing TokoPay credentials". Jika tidak ada error, berarti setup sudah benar.
+
+Jika `MAINTENANCE_MODE=true`, seluruh halaman akan menampilkan tampilan pemeliharaan.
 
 ### Troubleshooting:
 

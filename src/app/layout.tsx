@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/google-font-preconnect */
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Maintenance from '@/components/Maintenance';
 
 const geistSans = Geist({
    variable: '--font-geist-sans',
@@ -76,6 +78,7 @@ export default function RootLayout({
 }: Readonly<{
    children: React.ReactNode;
 }>) {
+   const isMaintenanceMode = process.env.MAINTENANCE_MODE === 'true';
    return (
       <html lang="en" suppressHydrationWarning>
          <head>
@@ -100,8 +103,14 @@ export default function RootLayout({
          </head>
          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-               {children}
-               <Toaster />
+               {isMaintenanceMode ? (
+                  <Maintenance />
+               ) : (
+                  <>
+                     {children}
+                     <Toaster />
+                  </>
+               )}
             </ThemeProvider>
          </body>
       </html>
