@@ -133,9 +133,6 @@ export default function RiwayatPage() {
 
                {/* Refresh Button & LocalStorage Info */}
                <div className="flex justify-between items-center mb-6">
-                  <div className="text-sm text-muted-foreground">
-                     Data dari localStorage: <code className="bg-muted px-2 py-1 rounded text-foreground">purchase_history</code>
-                  </div>
                   <Button onClick={fetchTransactionHistory} disabled={loading} variant="outline">
                      <RefreshCw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
                      {loading ? 'Memuat...' : 'Refresh'}
